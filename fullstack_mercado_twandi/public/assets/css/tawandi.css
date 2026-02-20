@@ -1,0 +1,125 @@
+:root {
+  --fundo: #f4f1ea;
+  --fundo-escuro: #0f1c1a;
+  --superficie: #ffffff;
+  --superficie-2: #f8f9f6;
+  --texto: #12211f;
+  --texto-suave: #5f6e6b;
+  --primaria: #0e7a57;
+  --primaria-escura: #0a5c41;
+  --destaque: #caa86a;
+  --borda: #d8ddd7;
+  --sombra: 0 14px 40px rgba(11, 25, 22, 0.08);
+  --raio: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', sans-serif;
+  color: var(--texto);
+  background: radial-gradient(circle at top right, #fdfaf4 0%, var(--fundo) 45%, #ecebe6 100%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 0.6rem;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0 0 1rem;
+  color: var(--texto-suave);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1140px, 92vw);
+  margin-inline: auto;
+}
+
+.linha {
+  display: flex;
+}
+
+.entre {
+  justify-content: space-between;
+}
+
+.centro-v {
+  align-items: center;
+}
+
+.gap-sm {
+  gap: 0.75rem;
+}
+
+.btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.74rem 1.1rem;
+  background: linear-gradient(120deg, var(--primaria), var(--primaria-escura));
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.btn-secundario {
+  background: #fff;
+  color: var(--primaria-escura);
+  border: 1px solid var(--borda);
+}
+
+.btn-lg {
+  padding: 0.95rem 1.4rem;
+  display: inline-block;
+  margin-top: 0.8rem;
+}
+
+.vidro {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.sessao {
+  padding: 4.2rem 0;
+}
+
+.pill {
+  font-size: 0.85rem;
+  border: 1px solid var(--borda);
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: var(--superficie);
+}
+
+.card-fino {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 1.2rem;
+}
+
+@media (max-width: 900px) {
+  .linha {
+    flex-wrap: wrap;
+  }
+}
