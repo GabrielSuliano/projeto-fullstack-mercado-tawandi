@@ -108,15 +108,20 @@ POST api/index.php?rota=admin.produtos.atualizar
 POST api/index.php?rota=admin.produtos.excluir
 ```
 
-## Credencial inicial
+## Inicialização administrativa
 
-Quando as tabelas estao vazias, o sistema cria um usuario admin inicial:
-
-```text
-admin@mercadotawandi.com
-123456
-```
+A conexão contém uma rotina de inicialização com conta administrativa fixa e produtos demonstrativos. Não use a conta em ambiente público; consulte [configuração e limites](docs/SETUP.md). Credenciais não são reproduzidas aqui.
 
 ## Status
 
-Projeto full stack funcional para portfolio, com loja, API PHP, autenticacao, pedidos e painel administrativo.
+Implementação demonstrativa full stack para portfólio, com loja, API PHP, autenticacao, pedidos e painel administrativo.
+
+## Arquitetura e contratos
+
+Páginas PHP e React carregado pelo navegador fornecem catálogo/carrinho. `public/api/index.php` encaminha ao roteador `backend/api/index.php`; endpoints usam `lib/auth.php` e PDO. Não há instalação npm ou bundle React neste projeto.
+
+O banco relaciona `usuarios` 1:N `pedidos`, `pedidos` 1:N `pedido_itens` e `produtos` 1:N `pedido_itens`. Pedidos usam transação e valores do catálogo no servidor; não há gateway de pagamento. Confira [configuração e limites](docs/SETUP.md).
+
+## Testes e evolução
+
+Não há suíte automatizada ou deploy confirmado. Esta revisão leu rotas, autenticação, pedidos e esquema sem executar a aplicação: a conexão inicializa dados automaticamente. Prioridades: retirar conta fixa do bootstrap em futura alteração de código, separar migrations do HTTP e testar sessão/pedidos/CSRF. Não há licença versionada.
