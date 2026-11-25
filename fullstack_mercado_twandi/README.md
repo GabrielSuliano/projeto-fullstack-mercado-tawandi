@@ -39,15 +39,14 @@ Se seu MySQL for diferente, ajuste no `database.php` ou configure variaveis de a
 3. No phpMyAdmin, crie o banco `mercado_tawandi`.
 4. Importe `database/schema.sql` nesse banco.
 5. Abra:
-   - `http://localhost/Nova%20pasta%20(3)/public/`
+   - `http://localhost/fullstack_mercado_twandi/public/`
 
 ## Seed inicial
-Na primeira requisicao, se as tabelas estiverem vazias, o sistema cria:
-- Usuario admin: `admin@mercadotawandi.com` / `123456`
-- Produtos iniciais de exemplo
+
+A primeira conexão inicializa tabelas, produtos e conta administrativa fixa. Credenciais não são reproduzidas aqui. Leia [configuração e limites](../docs/SETUP.md) e use banco isolado.
 
 Painel admin:
-- `http://localhost/Nova%20pasta%20(3)/public/admin.php`
+- `http://localhost/fullstack_mercado_twandi/public/admin.php`
 
 ## Rotas da API
 - `GET api/index.php?rota=produtos`
